@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Store</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Vegetable Store!</h1>
+    <h3>Available items:</h3>
+
+    <form action="/buy" method="post">
+        <select name="item">
+            {% for veg, details in vegetables.items() %}
+                <option value="{{ veg }}">{{ veg }} - {{ details['price'] }} rupees/kg (Available: {{ details['quantity'] }} kgs)</option>
+            {% endfor %}
+        </select>
+
+        <label for="quantity">Enter quantity (in kgs): </label>
+        <input type="number" step="0.01" name="quantity" required>
+        <button type="submit">Buy</button>
+    </form>
+    <br>
+
+    <a href="/close">Close Shop</a>
+</body>
+</html>

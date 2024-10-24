@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Purchase Summary</h2>
+    <p>You bought {{ quantity }} kgs of {{ item }} for {{ amount }} rupees.</p>
+    <p>Total so far: {{ total_amount }} rupees.</p>
+    <br>
+
+    <a href="/">Buy another item</a>
+    <br>
+    <a href="/close">Close Shop</a>
+</body>
+</html>

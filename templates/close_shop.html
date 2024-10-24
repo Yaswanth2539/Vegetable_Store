@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Close Shop</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Remaining Inventory</h2>
+    <ul>
+        {% for veg, details in vegetables.items() %}
+            <li>{{ veg }} - {{ details['quantity'] }} kgs left</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/report">Check today's profit</a>
+</body>
+</html>
